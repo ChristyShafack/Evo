@@ -14,8 +14,13 @@ import { Component, Input } from '@angular/core';
         <span>Location: City: {{event.location.city}}</span>
         <span>Location: Country: {{event.location.country}}</span>
     </div>
+    <br>
+    <button class="btn btn-primary" (click)="handleClickMe()"> Click Me! </button>
     </div>`
 })
 export class EventsThumbnailComponent {
   @Input() event: any;
+  handleClickMe(){
+      alert('clicked!');
+  }
 }

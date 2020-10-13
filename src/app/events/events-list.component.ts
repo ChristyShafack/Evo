@@ -1,4 +1,3 @@
-import { $ } from 'protractor';
 import { Component } from '@angular/core';
 
 @Component({
@@ -26,5 +25,4 @@ export class EventsListComponent {
           country: 'England'
         }
     } 
-
 }
