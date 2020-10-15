@@ -7,10 +7,13 @@ import { Component } from '@angular/core';
   <h1>Upcoming Angular Events</h1>
   <hr>
   <!--PASSING VALUE OF EVENT1 FROM EVENTS-LIST COMP TO EVENTS-THUMBNAIL COMP-->
-  <events-thumbnail (eventClick) = "handleEventClicked($event)" [event]= "event1" ></events-thumbnail>
+  <!--USING THUMBNAIL VARIABLES TO INTERACT WITH CHILD COMPONENTS-->
+  <events-thumbnail #thumbnail  [event]= "event1" ></events-thumbnail>
+  <button class="btn btn-primary" (click)="thumbnail.logFoo()">Log Me Some Foo</button>
 </div>
   `
 })
+
 export class EventsListComponent {
   event1 = {
       id: 1,
@@ -24,5 +27,5 @@ export class EventsListComponent {
           city: 'London',
           country: 'England'
         }
-    } 
+      } 
 }
