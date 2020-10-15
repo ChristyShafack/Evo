@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
   <h1>Upcoming Angular Events</h1>
   <hr>
   <!--PASSING VALUE OF EVENT1 FROM EVENTS-LIST COMP TO EVENTS-THUMBNAIL COMP-->
-  <!--USING THUMBNAIL VARIABLES TO INTERACT WITH CHILD COMPONENTS-->
-  <events-thumbnail #thumbnail  [event]= "event1" ></events-thumbnail>
-  <button class="btn btn-primary" (click)="thumbnail.logFoo()">Log Me Some Foo</button>
+  <!--USING THUMBNAIL VARIABLES TO INTERACT WITH CHILD COMPONENTS using #thumbnail -->
+  <events-thumbnail [event]= "event1" ></events-thumbnail>
+  <button class="btn btn-primary">Log Me Some Foo</button>
 </div>
   `
 })

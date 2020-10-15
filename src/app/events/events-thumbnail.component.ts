@@ -19,8 +19,5 @@ import { Component, Input } from '@angular/core';
 })
 export class EventsThumbnailComponent {
   @Input() event: any;
-  logFoo(){
-    console.log('Foo')
-  }
 
 }
