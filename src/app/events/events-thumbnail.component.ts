@@ -9,13 +9,20 @@ import { Component, Input } from '@angular/core';
     <div>Time: {{event.time}}</div>
     <div>Price: \${{event.price}}</div>
     <div>
-        <span>Location: Address: {{event.location.address}}</span>
-        <span>&nbsp;</span>
-        <span>Location: City: {{event.location.city}}</span>
-        <span>Location: Country: {{event.location.country}}</span>
+        <span> Location: {{event.location.address}}</span>
+        <span class="pad-left"> {{event.location.city}},</span>
+        <span> {{event.location.country}}</span>
     </div>
     <br>
-    </div>`
+    </div>
+    `,
+  styles: [
+    `
+      .pad-left { margin-left: 20px}
+      .well div { color: #bbb}
+
+    `
+  ]
 })
 export class EventsThumbnailComponent {
   @Input() event: any;
