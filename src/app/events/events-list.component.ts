@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   <h1>Upcoming Angular Events</h1>
   <hr>
   <!--PASSING VALUE OF EVENT1 FROM EVENTS-LIST COMP TO EVENTS-THUMBNAIL COMP-->
-  <events-thumbnail [event]= "event1" ></events-thumbnail>
+  <events-thumbnail (eventClick) = "handleEventClicked($event)" [event]= "event1" ></events-thumbnail>
 </div>
   `
 })
