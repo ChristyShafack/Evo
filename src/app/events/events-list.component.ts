@@ -8,8 +8,11 @@ import { Component } from '@angular/core';
   <hr>
   <!--PASSING VALUE OF EVENT1 FROM EVENTS-LIST COMP TO EVENTS-THUMBNAIL COMP-->
   <!--USING THUMBNAIL VARIABLES TO INTERACT WITH CHILD COMPONENTS using #thumbnail -->
-  <events-thumbnail *ngFor = "let event of events" [event] = "event" ></events-thumbnail>
-  <button class="btn btn-primary">Log Me Some Foo</button>
+  <div class="row">
+  <div *ngFor = "let event of events" class="col-md-5">
+  <events-thumbnail [event] = "event" ></events-thumbnail>
+  </div>
+  </div>
 </div>
   `
 })

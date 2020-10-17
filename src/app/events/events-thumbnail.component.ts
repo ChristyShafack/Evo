@@ -17,10 +17,9 @@ import { Component, Input } from '@angular/core';
     </div>
     `,
   styles: [
-    `
-      .pad-left { margin-left: 20px}
-      .well div { color: #bbb}
-
+    ` .thumbnail { min-height: 210px; }
+      .pad-left { margin-left: 20px; }
+      .well div { color: #bbb; }
     `
   ]
 })
