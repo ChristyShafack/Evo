@@ -4,21 +4,23 @@ import { Component, Input } from '@angular/core';
   selector: 'events-thumbnail',
   template: `
   <div class="well hoverwell thumbnail">
-    <h2>{{ event.name }}</h2>
-    <div>Date: {{event.date}}</div>
-    <div>Time: {{event.time}}</div>
-    <div>Price: \${{event.price}}</div>
+    <h2>{{ event?.name }}</h2>
+    <div>Date: {{event?.date}}</div>
+    <div>Time: {{event?.time}}</div>
+    <div>Price: \${{event?.price}}</div>
     <div>
-        <span> Location: {{event.location.address}}</span>
-        <span class="pad-left"> {{event.location.city}},</span>
-        <span> {{event.location.country}}</span>
+        <span> Location: {{event?.location?.address}}</span>
+        <span class="pad-left"> {{event?.location?.city}},</span>
+        <span> {{event?.location?.country}}</span>
     </div>
-    <br>
+    <div>
+    Online URL: {{event?.onlineUrl}}
+    </div>
     </div>
     `,
   styles: [
     ` .thumbnail { min-height: 210px; }
-      .pad-left { margin-left: 20px; }
+      .pad-left { margin-left: 10px; }
       .well div { color: #bbb; }
     `
   ]
