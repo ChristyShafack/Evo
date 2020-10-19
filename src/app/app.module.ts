@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { CreateEventComponent } from './events/create-event.component';
+import { Error404Component } from './errors/404.component';
 import { EventDetailsComponent } from './events/events-details/event-details.component';
 import { EventService } from './events/shared/event.service'
 import { EventsAppComponent } from './events-app.component';
@@ -18,7 +19,8 @@ import { appRoutes } from './routes';
     EventsListComponent,
     EventsThumbnailComponent,
     EventDetailsComponent,
-    CreateEventComponent
+    CreateEventComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
