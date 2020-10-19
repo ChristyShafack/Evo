@@ -5,11 +5,10 @@ import { Subject } from 'rxjs';
 @Injectable()
 export class EventService {
     getEvents() {
-        let Subject = new Subject()
-        setTimeout(() => {Subject.next(EVENTS); Subject.complete();}, //AN OBSERVABLE
+        let subject = new Subject()
+        setTimeout(() => {subject.next(EVENTS); subject.complete(); }, //AN OBSERVABLE
         100)
         return subject
-        
     }
     getEvent(id:number) {
         return EVENTS.find(event => event.id === id )
