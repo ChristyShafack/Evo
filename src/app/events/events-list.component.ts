@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 import { EventService } from './shared/event.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { EventService } from './shared/event.service';
   <!--USING THUMBNAIL VARIABLES TO INTERACT WITH CHILD COMPONENTS using #thumbnail -->
   <div class="row">
   <div *ngFor = "let event of events" class="col-md-5">
-  <events-thumbnail [event] = "event" ></events-thumbnail>
+  <events-thumbnail (click)="handleThumbnailClick(event.name)" [event] = "event" ></events-thumbnail>
   </div>
   </div>
 </div>
@@ -19,7 +20,7 @@ import { EventService } from './shared/event.service';
 })
 
 //INJECTING EVENT SERVICE
-export class EventsListComponent {
+export class EventsListComponent implements OnInit {
   events:any[]
   constructor(private eventService: EventService) {
   }
@@ -27,5 +28,9 @@ export class EventsListComponent {
   //FETCHING DATA FROM THE ngOnInit event
   ngOnInit(){
     this.events = this.eventService.getEvents()
+  }
+
+  handleThumbnailClick(eventName){
+    
   }
 }
