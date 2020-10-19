@@ -1,9 +1,12 @@
-import { CreateEventComponent } from './events/create-event.component';
+import {
+    CreateEventComponent,
+    EventDetailsComponent,
+    EventListResolver,
+    EventRouteActivator,
+    EventsListComponent,
+} from './events/index'
+
 import { Error404Component } from './errors/404.component';
-import { EventDetailsComponent } from './events/events-details/event-details.component';
-import { EventListResolver } from './events/events-list-resolver.service';
-import { EventRouteActivator } from './events/events-details/event-route-activator.component';
-import { EventsListComponent } from './events/events-list.component';
 import { Routes } from '@angular/router';
 
 //CREATING OUR ROUTES
