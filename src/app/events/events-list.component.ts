@@ -25,13 +25,13 @@ declare let toastr
 
 //INJECTING EVENT SERVICE & TOASTR SERVICE
 export class EventsListComponent implements OnInit {
-  events:any[]
+  events:any
   constructor(private eventService: EventService, private toastr: ToastrService) {
   }
   //INJECTING THE SERVICE IN A LIFE CYCLE HOOK (ONLY WHEN IT IS NEEDED)
   //FETCHING DATA FROM THE ngOnInit event
   ngOnInit(){
-    this.events = this.eventService.getEvents()
+    this.eventService.getEvents().subscribe(events => { this.events = events                                                                                                                                                                                                                                                                                                                                                                                                                                                        } )
   }
 
   handleThumbnailClick(eventName){
