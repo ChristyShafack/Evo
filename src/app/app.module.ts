@@ -30,8 +30,16 @@ import { appRoutes } from './routes';
   providers: [
     EventService,
     ToastrService,
-    EventRouteActivator 
+    EventRouteActivator,
+    { provide: 'canDeactivateCreateEvent', 
+    useValue: checkDirtySate
+    }
+    //THE LONG HAND APPROACH {provide: EventService, useValue: EventService}
   ],
   bootstrap: [EventsAppComponent]
 })
 export class AppModule { }
+
+export function  checkDirtySate(){
+  return false
+}
