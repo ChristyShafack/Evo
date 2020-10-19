@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 import { EventService } from './shared/event.service';
+import { ToastrService } from '../commons/toastr.service';
+
+//LETTING TYPESCRIPT KNOW ABT THE Toastr VARIABLE
+
+declare let toastr
 
 @Component({
   selector: 'events-list',
@@ -19,10 +24,10 @@ import { EventService } from './shared/event.service';
   `
 })
 
-//INJECTING EVENT SERVICE
+//INJECTING EVENT SERVICE & TOASTR SERVICE
 export class EventsListComponent implements OnInit {
   events:any[]
-  constructor(private eventService: EventService) {
+  constructor(private eventService: EventService, private toastr: ToastrService) {
   }
   //INJECTING THE SERVICE IN A LIFE CYCLE HOOK (ONLY WHEN IT IS NEEDED)
   //FETCHING DATA FROM THE ngOnInit event
@@ -31,6 +36,6 @@ export class EventsListComponent implements OnInit {
   }
 
   handleThumbnailClick(eventName){
-    
+    this.toastr.success(eventName)
   }
 }
