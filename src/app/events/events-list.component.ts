@@ -20,8 +20,12 @@ import { EventService } from './shared/event.service';
 
 //INJECTING EVENT SERVICE
 export class EventsListComponent {
-  events
+  events:any[]
   constructor(private eventService: EventService) {
+  }
+  //INJECTING THE SERVICE IN A LIFE CYCLE HOOK (ONLY WHEN IT IS NEEDED)
+  //FETCHING DATA FROM THE ngOnInit event
+  ngOnInit(){
     this.events = this.eventService.getEvents()
   }
 }
