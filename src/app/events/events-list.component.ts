@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
 import { EventService } from './shared/event.service';
+import { IEvent } from './shared/index'
 import { ToastrService } from '../commons/toastr.service';
 
 //LETTING TYPESCRIPT KNOW ABT THE Toastr VARIABLE
@@ -26,7 +27,7 @@ declare let toastr
 
 //INJECTING EVENT SERVICE & TOASTR SERVICE
 export class EventsListComponent implements OnInit {
-  events:any[]
+  events: IEvent[]
   constructor(private eventService: EventService, private toastr: ToastrService, private route:ActivatedRoute) {
   }
   //INJECTING THE SERVICE IN A LIFE CYCLE HOOK (ONLY WHEN IT IS NEEDED)

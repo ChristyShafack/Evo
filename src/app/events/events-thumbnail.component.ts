@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 
+import { IEvent } from './shared/index'
+
 @Component({
   selector: 'events-thumbnail',
   template: `
@@ -30,6 +32,6 @@ import { Component, Input } from '@angular/core';
   ]
 })
 export class EventsThumbnailComponent {
-  @Input() event: any;
+  @Input() event: IEvent
 
 }
