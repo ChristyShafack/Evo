@@ -8,6 +8,7 @@ import{
   EventsThumbnailComponent,
 } from './events/index'
 
+import { AuthService } from './user/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { Error404Component } from './errors/404.component';
 import { EventsAppComponent } from './events-app.component';
@@ -36,6 +37,7 @@ import { appRoutes } from './routes';
     ToastrService,
     EventRouteActivator,
     EventListResolver,
+    AuthService,
     { provide: 'canDeactivateCreateEvent', 
     useValue: checkDirtySate
     }

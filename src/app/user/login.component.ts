@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service'
 // import { AuthService } from './auth.service'
 import { Component } from '@angular/core'
 import { Router } from '@angular/router'
@@ -13,13 +14,13 @@ export class LoginComponent {
   password
   mouseoverLogin
 
-//   constructor(private authService:AuthService, private router:Router) {
+  constructor(private authService: AuthService, private router:Router) {
 
-//   }
+  }
 
   login(formValues) {
     console.log(formValues)
-    // this.authService.loginUser(formValues.userName, formValues.password)
+    this.authService.loginUser(formValues.userName, formValues.password)
     // this.router.navigate(['events'])
   }
 
