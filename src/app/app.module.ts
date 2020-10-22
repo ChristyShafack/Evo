@@ -7,6 +7,7 @@ import{
   EventsListComponent,
   EventsThumbnailComponent,
 } from './events/index'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AuthService } from './user/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -30,7 +31,9 @@ import { appRoutes } from './routes';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     EventService,
