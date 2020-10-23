@@ -17,6 +17,7 @@ import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from './nav/navbar.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, } from '@angular/router';
+import { SessionListComponent } from './events/events-details/session-list.component';
 import { ToastrService } from './commons/toastr.service';
 import { appRoutes } from './routes';
 
@@ -30,6 +31,7 @@ import { appRoutes } from './routes';
     CreateEventComponent,
     Error404Component,
     CreateSessionComponent,
+    SessionListComponent,
   ],
   imports: [
     BrowserModule,
