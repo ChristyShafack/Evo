@@ -1,11 +1,13 @@
 import{
   CreateEventComponent,
+  DurationPipe,
   EventDetailsComponent,
   EventListResolver,
   EventRouteActivator,
   EventService,
   EventsListComponent,
   EventsThumbnailComponent,
+  SessionListComponent
 } from './events/index'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -18,7 +20,6 @@ import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from './nav/navbar.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, } from '@angular/router';
-import { SessionListComponent } from './events/events-details/session-list.component';
 import { ToastrService } from './commons/toastr.service';
 import { appRoutes } from './routes';
 
@@ -33,7 +34,8 @@ import { appRoutes } from './routes';
     Error404Component,
     CreateSessionComponent,
     SessionListComponent,
-    CollapsibleWellComponent
+    CollapsibleWellComponent,
+    DurationPipe
   ],
   imports: [
     BrowserModule,
