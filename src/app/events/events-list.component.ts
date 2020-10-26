@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EventService } from './shared/event.service';
 import { IEvent } from './shared/index'
-import { ToastrService } from '../commons/toastr.service';
 
 //LETTING TYPESCRIPT KNOW ABT THE Toastr VARIABLE
 
@@ -18,7 +17,7 @@ declare let toastr
   <!--USING THUMBNAIL VARIABLES TO INTERACT WITH CHILD COMPONENTS using #thumbnail -->
   <div class="row">
   <div *ngFor = "let event of events" class="col-md-5">
-  <events-thumbnail (click)="handleThumbnailClick(event.name)" [event] = "event" ></events-thumbnail>
+  <events-thumbnail [event] = "event" ></events-thumbnail>
   </div>
   </div>
 </div>
@@ -28,7 +27,7 @@ declare let toastr
 //INJECTING EVENT SERVICE & TOASTR SERVICE
 export class EventsListComponent implements OnInit {
   events: IEvent[]
-  constructor(private eventService: EventService, private toastr: ToastrService, private route:ActivatedRoute) {
+  constructor(private eventService: EventService, private route:ActivatedRoute) {
   }
   //INJECTING THE SERVICE IN A LIFE CYCLE HOOK (ONLY WHEN IT IS NEEDED)
   //FETCHING DATA FROM THE ngOnInit event
@@ -36,7 +35,4 @@ export class EventsListComponent implements OnInit {
     this.events = this.route.snapshot.data['events']
   }
 
-  handleThumbnailClick(eventName){
-    this.toastr.success(eventName)
-  }
 }

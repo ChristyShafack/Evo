@@ -10,6 +10,7 @@ import{
   SessionListComponent
 } from './events/index'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TOASTR_TOKEN, Toastr } from './commons/toastr.service';
 
 import { AuthService } from './user/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,8 +21,9 @@ import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from './nav/navbar.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, } from '@angular/router';
-import { ToastrService } from './commons/toastr.service';
 import { appRoutes } from './routes';
+
+declare let toastr:Toastr
 
 @NgModule({
   declarations: [
@@ -45,7 +47,7 @@ import { appRoutes } from './routes';
   ],
   providers: [
     EventService,
-    ToastrService,
+    { provide: TOASTR_TOKEN, useValue: toastr },
     EventRouteActivator,
     EventListResolver,
     AuthService,
