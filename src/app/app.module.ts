@@ -23,7 +23,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, } from '@angular/router';
 import { appRoutes } from './routes';
 
-declare let toastr:Toastr
+declare let toastr: Toastr
 
 @NgModule({
   declarations: [

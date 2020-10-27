@@ -5,9 +5,6 @@ import { EventService } from './shared/event.service';
 import { IEvent } from './shared/index'
 
 //LETTING TYPESCRIPT KNOW ABT THE Toastr VARIABLE
-
-declare let toastr
-
 @Component({
   template: `
   <div>
@@ -34,5 +31,4 @@ export class EventsListComponent implements OnInit {
   ngOnInit(){
     this.events = this.route.snapshot.data['events']
   }
-
 }
