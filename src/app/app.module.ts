@@ -45,10 +45,12 @@ declare let toastr: Toastr
     FormsModule,
     ReactiveFormsModule
   ],
+  // { TOASTR_TOKEN }, USE CLASS WAY OF PROVIDING SERVICES
+  // { provide: TOASTR_TOKEN, useValue: toastr }, USE VALUE WAY OF PROVIDING SERVICES
   providers: [
     EventService,
     { provide: TOASTR_TOKEN, useValue: toastr },
-    EventRouteActivator,
+    EventRouteActivator,  
     EventListResolver,
     AuthService,
     { provide: 'canDeactivateCreateEvent', 
