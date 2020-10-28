@@ -8,7 +8,9 @@ import{
   EventService,
   EventsListComponent,
   EventsThumbnailComponent,
-  SessionListComponent
+  SessionListComponent,
+  UpvoteComponent,
+  VoterService
 } from './events/index'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -39,7 +41,8 @@ let jQuery:Toastr = window['$']
     CollapsibleWellComponent,
     DurationPipe,
     SimpleModalComponent,
-    ModalTriggerDirective
+    ModalTriggerDirective,
+    UpvoteComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +59,7 @@ let jQuery:Toastr = window['$']
 
     EventRouteActivator,  
     EventListResolver,
+    VoterService,
     AuthService,
     { provide: 'canDeactivateCreateEvent', 
     useValue: checkDirtySate
