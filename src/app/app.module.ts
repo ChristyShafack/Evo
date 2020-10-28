@@ -1,4 +1,4 @@
-import { CollapsibleWellComponent, JQ_TOKEN, SimpleModalComponent, TOASTR_TOKEN, Toastr } from './commons/index'
+import { CollapsibleWellComponent, JQ_TOKEN, ModalTriggerDirective, SimpleModalComponent, TOASTR_TOKEN, Toastr } from './commons/index'
 import{
   CreateEventComponent,
   DurationPipe,
@@ -38,7 +38,8 @@ let jQuery:Toastr = window['$']
     SessionListComponent,
     CollapsibleWellComponent,
     DurationPipe,
-    SimpleModalComponent
+    SimpleModalComponent,
+    ModalTriggerDirective
   ],
   imports: [
     BrowserModule,

@@ -17,5 +17,4 @@ export class ModalTriggerDirective implements OnInit {
       this.$(`#${this.modalId}`).modal({})
     })
   }
-  
 }
