@@ -22,6 +22,7 @@ export class EventDetailsComponent {
     ngOnInit() {
         this.route.params.forEach((params: Params) => {
             this.event = this.eventService.getEvent(+params['id'])
+            this.addMode = false;
         })
         // this.event = this.eventService.getEvent
         // ( +this.route.snapshot.params['id'])
