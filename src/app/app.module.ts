@@ -1,4 +1,4 @@
-import { CollapsibleWellComponent, JQ_TOKEN, TOASTR_TOKEN, Toastr } from './commons/index'
+import { CollapsibleWellComponent, JQ_TOKEN, SimpleModalComponent, TOASTR_TOKEN, Toastr } from './commons/index'
 import{
   CreateEventComponent,
   DurationPipe,
@@ -37,7 +37,8 @@ let jQuery:Toastr = window['$']
     CreateSessionComponent,
     SessionListComponent,
     CollapsibleWellComponent,
-    DurationPipe
+    DurationPipe,
+    SimpleModalComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +51,8 @@ let jQuery:Toastr = window['$']
   providers: [
     EventService,
     { provide: TOASTR_TOKEN, useValue: toastr },
+    { provide: JQ_TOKEN, useValue: jQuery },
+
     EventRouteActivator,  
     EventListResolver,
     AuthService,
