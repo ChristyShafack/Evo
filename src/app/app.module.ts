@@ -20,6 +20,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CreateSessionComponent } from './events/events-details/create-session.component';
 import { Error404Component } from './errors/404.component';
 import { EventsAppComponent } from './events-app.component';
+import { HttpClientModule } from '@angular/common/http'
 import { NavBarComponent } from './nav/navbar.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, } from '@angular/router';
@@ -50,7 +51,8 @@ let jQuery:Toastr = window['$']
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   // { TOASTR_TOKEN }, USE CLASS WAY OF PROVIDING SERVICES
   // { provide: TOASTR_TOKEN, useValue: toastr }, USE VALUE WAY OF PROVIDING SERVICES
