@@ -8,6 +8,7 @@ import{
   EventService,
   EventsListComponent,
   EventsThumbnailComponent,
+  LocationValidator,
   SessionListComponent,
   UpvoteComponent,
   VoterService
@@ -42,7 +43,8 @@ let jQuery:Toastr = window['$']
     DurationPipe,
     SimpleModalComponent,
     ModalTriggerDirective,
-    UpvoteComponent
+    UpvoteComponent,
+    LocationValidator
   ],
   imports: [
     BrowserModule,
