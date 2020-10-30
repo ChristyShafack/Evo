@@ -1,16 +1,29 @@
 //CREATING THE GET EVENTS SERVICE
 import { EventEmitter, Injectable } from '@angular/core'
 import { IEvent, ISession } from './event.model';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, of } from 'rxjs';
+
+import { HttpClient } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class EventService {
-    getEvents():Observable<IEvent[]>{
-        let subject = new Subject<IEvent[]>()
-        setTimeout(() => {subject.next(EVENTS); subject.complete(); }, //AN OBSERVABLE
-        100)
-        return subject
+    constructor(private http: HttpClient) {
+    
     }
+    //Getting data form our server and handling basic errors
+    getEvents():Observable<IEvent[]> {
+      return this.http.get<IEvent[]>('/api/events')
+        .pipe(catchError(this.handleError<IEvent[]>('getEvents', [])))
+    }
+
+    private handleError<T> (operation = 'operation', result?: T) {
+        return (error: any): Observable<T> => {
+          console.error(error);
+          return of(result as T);
+        }
+      }
+
     getEvent(id:number) {
         return EVENTS.find(event => event.id === id )
     }
